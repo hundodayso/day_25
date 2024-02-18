@@ -16,14 +16,18 @@ import csv
 
 import pandas
 
-data = pandas.read_csv("weather_data.csv")
-# print(data["temp"])
+# data = pandas.read_csv("weather_data.csv")
+# max_temp = data[data.temp == data.temp.max()]
+# print(max_temp.day)
 
-# temp_list = data["temp"].to_list()
-#
-# avg_temp = sum(temp_list) / len(temp_list)
-# print(avg_temp)
-max_temp = data[data.temp == data.temp.max()]
-#print(data[data.temp == max_temp])
+data = pandas.read_csv("Squirrel_Data.csv")
 
-print(max_temp.day)
+grey_squirrels_count = data[data["Primary Fur Color"] == "Gray"].shape[0]
+red_squirrels_count = data[data["Primary Fur Color"] == "Cinnamon"].shape[0]
+black_squirrels_count = data[data["Primary Fur Color"] == "Black"].shape[0]
+
+
+print(grey_squirrels_count)
+print(red_squirrels_count)
+print(black_squirrels_count)
+
